@@ -24,24 +24,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup core data stack
         MagicalRecord.setupCoreDataStack()
         
-        // Import exercises
-        if let path = NSBundle.mainBundle().pathForResource("exercisesStatic", ofType: "json") {
+        // Import data from JSON
+        if let
+            categoriesJSONPath = NSBundle.mainBundle().pathForResource("categoriesStatic", ofType: "json"),
+            foodJSONPath = NSBundle.mainBundle().pathForResource("foodStatic", ofType: "json"),
+            exercisesJSONPath = NSBundle.mainBundle().pathForResource("exercisesStatic", ofType: "json")
+        {
             do {
-                let jsonData = try NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
-                if let exerciseDicts = try NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as? [[String:AnyObject]] {
+                
+                let categoriesJSONData =    try NSData(contentsOfFile: categoriesJSONPath, options: .DataReadingMappedIfSafe)
+                let foodJSONData =          try NSData(contentsOfFile: foodJSONPath, options: .DataReadingMappedIfSafe)
+                let exercisesJSONData =     try NSData(contentsOfFile: exercisesJSONPath, options: .DataReadingMappedIfSafe)
+                
+                if let
+                    categoryDicts =         try NSJSONSerialization.JSONObjectWithData(categoriesJSONData, options: []) as? [[String:AnyObject]],
+                    foodDicts =             try NSJSONSerialization.JSONObjectWithData(foodJSONData, options: []) as? [[String:AnyObject]],
+                    exerciseDicts =         try NSJSONSerialization.JSONObjectWithData(exercisesJSONData, options: []) as? [[String:AnyObject]]
+                {
+                    print("Importing \(categoryDicts.count) categories")
+                    print("Importing \(foodDicts.count) food")
                     print("Importing \(exerciseDicts.count) exercises")
                     
                     MagicalRecord.saveWithBlock({ (localContext) -> Void in
                         
+                        Category.MR_importFromArray(categoryDicts, inContext: localContext)
+                        Food.MR_importFromArray(foodDicts, inContext: localContext)
                         Exercise.MR_importFromArray(exerciseDicts, inContext: localContext)
                         
                     }, completion: { (success, error) -> Void in
                         
-                        let exercises = Exercise.MR_findAll() as! [Exercise]
-                        print("Stored \(exercises.count) exercises")
+                        print("Importing completed")
+                        // TODO: Notify table view controllers to update
                         
                     })
                 }
+                
             } catch {
                 // TODO: Handle error
             }

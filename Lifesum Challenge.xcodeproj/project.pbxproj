@@ -17,6 +17,8 @@
 		3E61BC1E1C458E30006A6F67 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC1D1C458E30006A6F67 /* Exercise.swift */; };
 		3E61BC221C459193006A6F67 /* Lifesum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC201C459193006A6F67 /* Lifesum.xcdatamodeld */; };
 		3E61BC261C45ABD7006A6F67 /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC251C45ABD7006A6F67 /* ExerciseTableViewController.swift */; };
+		3E61BC2A1C45B299006A6F67 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC291C45B299006A6F67 /* Category.swift */; };
+		3E61BC2C1C45B465006A6F67 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC2B1C45B465006A6F67 /* Food.swift */; };
 		EF6490A9978B2DFEFCF992BE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A214C02335383E26EEDCC1BD /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		3E61BC1D1C458E30006A6F67 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Models/Exercise.swift; sourceTree = "<group>"; };
 		3E61BC211C459193006A6F67 /* Lifesum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lifesum.xcdatamodel; sourceTree = "<group>"; };
 		3E61BC251C45ABD7006A6F67 /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
+		3E61BC291C45B299006A6F67 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Models/Category.swift; sourceTree = "<group>"; };
+		3E61BC2B1C45B465006A6F67 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Food.swift; path = Models/Food.swift; sourceTree = "<group>"; };
 		557152ABA0C76365F4583A34 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A214C02335383E26EEDCC1BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC8EBC2CE68E4C7A555464D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				3E61BC1D1C458E30006A6F67 /* Exercise.swift */,
+				3E61BC291C45B299006A6F67 /* Category.swift */,
+				3E61BC2B1C45B465006A6F67 /* Food.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -245,9 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E61BC1E1C458E30006A6F67 /* Exercise.swift in Sources */,
+				3E61BC2A1C45B299006A6F67 /* Category.swift in Sources */,
 				3E61BC261C45ABD7006A6F67 /* ExerciseTableViewController.swift in Sources */,
 				3E61BC031C457915006A6F67 /* AppDelegate.swift in Sources */,
 				3E61BC221C459193006A6F67 /* Lifesum.xcdatamodeld in Sources */,
+				3E61BC2C1C45B465006A6F67 /* Food.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
