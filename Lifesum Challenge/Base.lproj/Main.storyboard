@@ -69,21 +69,30 @@
             </objects>
             <point key="canvasLocation" x="1526" y="403"/>
         </scene>
-        <!--Food-->
+        <!--Categories-->
         <scene sceneID="0Wv-fa-TRw">
             <objects>
-                <tableViewController id="R0x-Of-zhe" sceneMemberID="viewController">
+                <tableViewController id="R0x-Of-zhe" customClass="CategoryTableViewController" customModule="Lifesum_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DXs-nA-gt8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="e7L-ok-wDu">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryCell" textLabel="JEI-XB-7hw" style="IBUITableViewCellStyleDefault" id="e7L-ok-wDu">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e7L-ok-wDu" id="Rdi-bh-G3M">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JEI-XB-7hw">
+                                            <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -92,7 +101,7 @@
                             <outlet property="delegate" destination="R0x-Of-zhe" id="YR8-JN-76N"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Food" id="Bxs-T2-IaN"/>
+                    <navigationItem key="navigationItem" title="Categories" id="Bxs-T2-IaN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztc-Zw-2yE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
