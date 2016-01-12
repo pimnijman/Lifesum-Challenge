@@ -45,6 +45,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("Importing \(foodDicts.count) food")
                     print("Importing \(exerciseDicts.count) exercises")
                     
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        // Show alert while loading
+                        let alertController = UIAlertController(title: "Loading data", message: "\n\n\n", preferredStyle: .Alert)
+                        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+                        activityIndicator.frame = alertController.view.bounds
+                        activityIndicator.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+                        activityIndicator.userInteractionEnabled = false
+                        activityIndicator.startAnimating()
+                        alertController.view.addSubview(activityIndicator)
+                        self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
+                    })
+                    
                     MagicalRecord.saveWithBlock({ (localContext) -> Void in
                         
                         Category.MR_importFromArray(categoryDicts, inContext: localContext)
@@ -54,6 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }, completion: { (success, error) -> Void in
                         
                         print("Importing completed")
+                        
+                        // Dismiss alert
+                        self.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+                        
                         // TODO: Notify table view controllers to update
                         
                     })
