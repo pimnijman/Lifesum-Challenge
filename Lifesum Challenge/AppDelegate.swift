@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Set global tint color
+        self.window?.tintColor = UIColor(red: 76/255.0, green: 190/255.0, blue: 142/255.0, alpha: 1.0)
+        
         // Setup core data stack
         MagicalRecord.setupCoreDataStack()
         
@@ -36,9 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         
                         let exercises = Exercise.MR_findAll() as! [Exercise]
                         print("Stored \(exercises.count) exercises")
-                        for exercise in exercises {
-                            print(exercise.calories)
-                        }
                         
                     })
                 }

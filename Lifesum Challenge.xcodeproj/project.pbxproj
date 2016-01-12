@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3E61BC031C457915006A6F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC021C457915006A6F67 /* AppDelegate.swift */; };
-		3E61BC051C457915006A6F67 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC041C457915006A6F67 /* FirstViewController.swift */; };
-		3E61BC071C457915006A6F67 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC061C457915006A6F67 /* SecondViewController.swift */; };
 		3E61BC0A1C457915006A6F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E61BC081C457915006A6F67 /* Main.storyboard */; };
 		3E61BC0C1C457915006A6F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E61BC0B1C457915006A6F67 /* Assets.xcassets */; };
 		3E61BC0F1C457915006A6F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E61BC0D1C457915006A6F67 /* LaunchScreen.storyboard */; };
@@ -18,14 +16,13 @@
 		3E61BC1C1C457FEE006A6F67 /* foodStatic.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E61BC191C457FEE006A6F67 /* foodStatic.json */; };
 		3E61BC1E1C458E30006A6F67 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC1D1C458E30006A6F67 /* Exercise.swift */; };
 		3E61BC221C459193006A6F67 /* Lifesum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC201C459193006A6F67 /* Lifesum.xcdatamodeld */; };
+		3E61BC261C45ABD7006A6F67 /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC251C45ABD7006A6F67 /* ExerciseTableViewController.swift */; };
 		EF6490A9978B2DFEFCF992BE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A214C02335383E26EEDCC1BD /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E61BBFF1C457915006A6F67 /* Lifesum Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lifesum Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E61BC021C457915006A6F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3E61BC041C457915006A6F67 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		3E61BC061C457915006A6F67 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3E61BC091C457915006A6F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E61BC0B1C457915006A6F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E61BC0E1C457915006A6F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +32,7 @@
 		3E61BC191C457FEE006A6F67 /* foodStatic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foodStatic.json; sourceTree = "<group>"; };
 		3E61BC1D1C458E30006A6F67 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Models/Exercise.swift; sourceTree = "<group>"; };
 		3E61BC211C459193006A6F67 /* Lifesum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lifesum.xcdatamodel; sourceTree = "<group>"; };
+		3E61BC251C45ABD7006A6F67 /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
 		557152ABA0C76365F4583A34 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A214C02335383E26EEDCC1BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC8EBC2CE68E4C7A555464D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,8 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				3E61BC021C457915006A6F67 /* AppDelegate.swift */,
-				3E61BC041C457915006A6F67 /* FirstViewController.swift */,
-				3E61BC061C457915006A6F67 /* SecondViewController.swift */,
+				3E61BC251C45ABD7006A6F67 /* ExerciseTableViewController.swift */,
 				3E61BC1F1C458E4B006A6F67 /* Models */,
 				3E61BC081C457915006A6F67 /* Main.storyboard */,
 				3E61BC0B1C457915006A6F67 /* Assets.xcassets */,
@@ -247,11 +244,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E61BC071C457915006A6F67 /* SecondViewController.swift in Sources */,
 				3E61BC1E1C458E30006A6F67 /* Exercise.swift in Sources */,
+				3E61BC261C45ABD7006A6F67 /* ExerciseTableViewController.swift in Sources */,
 				3E61BC031C457915006A6F67 /* AppDelegate.swift in Sources */,
 				3E61BC221C459193006A6F67 /* Lifesum.xcdatamodeld in Sources */,
-				3E61BC051C457915006A6F67 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
