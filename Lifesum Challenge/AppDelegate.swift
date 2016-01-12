@@ -74,7 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             // Dismiss alert
                             self.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
                             
-                            // TODO: Notify table view controllers to update
+                            // Notify table view controllers to update
+                            NSNotificationCenter.defaultCenter().postNotificationName("data_is_loaded", object: self)
                             
                         })
                     }

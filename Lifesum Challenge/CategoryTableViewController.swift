@@ -11,12 +11,28 @@ import UIKit
 class CategoryTableViewController: UITableViewController {
     
     var categories: [Category] = []
+    var dataLoadedObserver: NSObjectProtocol?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dataLoadedObserver = NSNotificationCenter.defaultCenter().addObserverForName("data_is_loaded", object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            self.refresh()
+        }
+        
+        self.refresh()
+    }
+    
+    deinit {
+        if self.dataLoadedObserver != nil {
+           NSNotificationCenter.defaultCenter().removeObserver(self.dataLoadedObserver!)
+        }
+    }
+    
+    func refresh() {
         self.categories = Category.MR_findAll() as! [Category]
+        self.tableView.reloadData()
     }
     
     // MARK: - Table view data source

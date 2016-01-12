@@ -13,10 +13,28 @@ class ExerciseTableViewController: UITableViewController {
     var exercises: [Exercise] = []
     
     
+    var dataLoadedObserver: NSObjectProtocol?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dataLoadedObserver = NSNotificationCenter.defaultCenter().addObserverForName("data_is_loaded", object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            self.refresh()
+        }
+        
+        self.refresh()
+    }
+    
+    deinit {
+        if self.dataLoadedObserver != nil {
+            NSNotificationCenter.defaultCenter().removeObserver(self.dataLoadedObserver!)
+        }
+    }
+    
+    func refresh() {
         self.exercises = Exercise.MR_findAll() as! [Exercise]
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
