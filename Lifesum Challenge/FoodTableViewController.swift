@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewController.swift
+//  FoodTableViewController.swift
 //  Lifesum Challenge
 //
 //  Created by Pim on 12-01-16.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class CategoryTableViewController: UITableViewController {
+class FoodTableViewController: UITableViewController {
     
-    var categories: [Category] = []
+    var category: Category?
+    var foods: [Food] = []
     var dataLoadedObserver: NSObjectProtocol?
     
     
@@ -26,36 +27,34 @@ class CategoryTableViewController: UITableViewController {
     
     deinit {
         if self.dataLoadedObserver != nil {
-           NSNotificationCenter.defaultCenter().removeObserver(self.dataLoadedObserver!)
+            NSNotificationCenter.defaultCenter().removeObserver(self.dataLoadedObserver!)
         }
     }
     
     func refresh() {
-        self.categories = Category.MR_findAll() as! [Category]
+        guard let category = self.category else {
+            self.foods = []
+            self.tableView.reloadData()
+            return
+        }
+        
+        let fetchRequest = Food.MR_requestAllWhere("categoryID", isEqualTo: category.id)
+        self.foods = Food.MR_executeFetchRequest(fetchRequest) as! [Food]
         self.tableView.reloadData()
     }
     
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.categories.count
+        return self.foods.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let category = self.categories[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath)
-        cell.textLabel?.text = category.title
+        let food = self.foods[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("FoodCell", forIndexPath: indexPath)
+        cell.textLabel?.text = food.title
+        cell.detailTextLabel?.text = String(format: "%d calories", arguments: [food.calories])
         return cell
-    }
-    
-    // MARK: - Navigation
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
-        let category = self.categories[indexPath.row]
-        
-        let foodTableViewController = segue.destinationViewController as! FoodTableViewController
-        foodTableViewController.category = category
     }
     
 }
