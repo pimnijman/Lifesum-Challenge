@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES">
+        <attribute name="addedByUser" optional="YES" attributeType="Boolean" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="addedbyuser"/>
+            </userInfo>
+        </attribute>
+        <attribute name="calories" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="custom" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="downloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hidden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="oid"/>
+            </userInfo>
+        </attribute>
+        <attribute name="lastUpdated" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="lastupdated"/>
+            </userInfo>
+        </attribute>
+        <attribute name="nameDA" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name_da"/>
+            </userInfo>
+        </attribute>
+        <attribute name="nameDE" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name_de"/>
+            </userInfo>
+        </attribute>
+        <attribute name="nameES" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name_es"/>
+            </userInfo>
+        </attribute>
+        <attribute name="nameFR" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name_fr"/>
+            </userInfo>
+        </attribute>
+        <attribute name="nameIT" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name_it"/>
+            </userInfo>
+        </attribute>
+        <attribute name="nameNL" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name_nl"/>
+            </userInfo>
+        </attribute>
+        <attribute name="nameNO" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name_no"/>
+            </userInfo>
+        </attribute>
+        <attribute name="namePL" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name_pl"/>
+            </userInfo>
+        </attribute>
+        <attribute name="namePT" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name_pt"/>
+            </userInfo>
+        </attribute>
+        <attribute name="nameRU" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name_ru"/>
+            </userInfo>
+        </attribute>
+        <attribute name="nameSV" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="name_sv"/>
+            </userInfo>
+        </attribute>
+        <attribute name="photoVersion" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="photo_version"/>
+            </userInfo>
+        </attribute>
+        <attribute name="removed" optional="YES" attributeType="Boolean" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="deleted"/>
+            </userInfo>
+        </attribute>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="id"/>
+        </userInfo>
+    </entity>
+    <elements>
+        <element name="Exercise" positionX="-63" positionY="-18" width="128" height="360"/>
+    </elements>
+</model>

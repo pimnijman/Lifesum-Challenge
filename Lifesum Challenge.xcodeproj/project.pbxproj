@@ -13,6 +13,12 @@
 		3E61BC0A1C457915006A6F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E61BC081C457915006A6F67 /* Main.storyboard */; };
 		3E61BC0C1C457915006A6F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E61BC0B1C457915006A6F67 /* Assets.xcassets */; };
 		3E61BC0F1C457915006A6F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E61BC0D1C457915006A6F67 /* LaunchScreen.storyboard */; };
+		3E61BC1A1C457FEE006A6F67 /* categoriesStatic.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E61BC171C457FEE006A6F67 /* categoriesStatic.json */; };
+		3E61BC1B1C457FEE006A6F67 /* exercisesStatic.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E61BC181C457FEE006A6F67 /* exercisesStatic.json */; };
+		3E61BC1C1C457FEE006A6F67 /* foodStatic.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E61BC191C457FEE006A6F67 /* foodStatic.json */; };
+		3E61BC1E1C458E30006A6F67 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC1D1C458E30006A6F67 /* Exercise.swift */; };
+		3E61BC221C459193006A6F67 /* Lifesum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC201C459193006A6F67 /* Lifesum.xcdatamodeld */; };
+		EF6490A9978B2DFEFCF992BE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A214C02335383E26EEDCC1BD /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,14 @@
 		3E61BC0B1C457915006A6F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E61BC0E1C457915006A6F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E61BC101C457915006A6F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E61BC171C457FEE006A6F67 /* categoriesStatic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categoriesStatic.json; sourceTree = "<group>"; };
+		3E61BC181C457FEE006A6F67 /* exercisesStatic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exercisesStatic.json; sourceTree = "<group>"; };
+		3E61BC191C457FEE006A6F67 /* foodStatic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foodStatic.json; sourceTree = "<group>"; };
+		3E61BC1D1C458E30006A6F67 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Models/Exercise.swift; sourceTree = "<group>"; };
+		3E61BC211C459193006A6F67 /* Lifesum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lifesum.xcdatamodel; sourceTree = "<group>"; };
+		557152ABA0C76365F4583A34 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A214C02335383E26EEDCC1BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC8EBC2CE68E4C7A555464D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF6490A9978B2DFEFCF992BE /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +57,8 @@
 			children = (
 				3E61BC011C457915006A6F67 /* Lifesum Challenge */,
 				3E61BC001C457915006A6F67 /* Products */,
+				4941254D8C19EF8FBCD10106 /* Pods */,
+				4F631529F3E2DCAC6FE4AFE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +76,50 @@
 				3E61BC021C457915006A6F67 /* AppDelegate.swift */,
 				3E61BC041C457915006A6F67 /* FirstViewController.swift */,
 				3E61BC061C457915006A6F67 /* SecondViewController.swift */,
+				3E61BC1F1C458E4B006A6F67 /* Models */,
 				3E61BC081C457915006A6F67 /* Main.storyboard */,
 				3E61BC0B1C457915006A6F67 /* Assets.xcassets */,
+				3E61BC201C459193006A6F67 /* Lifesum.xcdatamodeld */,
+				3E61BC161C457FEE006A6F67 /* JSON */,
 				3E61BC0D1C457915006A6F67 /* LaunchScreen.storyboard */,
 				3E61BC101C457915006A6F67 /* Info.plist */,
 			);
 			path = "Lifesum Challenge";
+			sourceTree = "<group>";
+		};
+		3E61BC161C457FEE006A6F67 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				3E61BC171C457FEE006A6F67 /* categoriesStatic.json */,
+				3E61BC181C457FEE006A6F67 /* exercisesStatic.json */,
+				3E61BC191C457FEE006A6F67 /* foodStatic.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		3E61BC1F1C458E4B006A6F67 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3E61BC1D1C458E30006A6F67 /* Exercise.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4941254D8C19EF8FBCD10106 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				557152ABA0C76365F4583A34 /* Pods.debug.xcconfig */,
+				FC8EBC2CE68E4C7A555464D4 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4F631529F3E2DCAC6FE4AFE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A214C02335383E26EEDCC1BD /* Pods.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +129,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E61BC131C457915006A6F67 /* Build configuration list for PBXNativeTarget "Lifesum Challenge" */;
 			buildPhases = (
+				4BE2863E963F506000323068 /* Check Pods Manifest.lock */,
 				3E61BBFB1C457915006A6F67 /* Sources */,
 				3E61BBFC1C457915006A6F67 /* Frameworks */,
 				3E61BBFD1C457915006A6F67 /* Resources */,
+				DD3741C088F80B1BDCC878C1 /* Embed Pods Frameworks */,
+				56EBA4F9DB637CE6CAE0CDE3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,10 +186,61 @@
 				3E61BC0F1C457915006A6F67 /* LaunchScreen.storyboard in Resources */,
 				3E61BC0C1C457915006A6F67 /* Assets.xcassets in Resources */,
 				3E61BC0A1C457915006A6F67 /* Main.storyboard in Resources */,
+				3E61BC1B1C457FEE006A6F67 /* exercisesStatic.json in Resources */,
+				3E61BC1A1C457FEE006A6F67 /* categoriesStatic.json in Resources */,
+				3E61BC1C1C457FEE006A6F67 /* foodStatic.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BE2863E963F506000323068 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		56EBA4F9DB637CE6CAE0CDE3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD3741C088F80B1BDCC878C1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3E61BBFB1C457915006A6F67 /* Sources */ = {
@@ -139,7 +248,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E61BC071C457915006A6F67 /* SecondViewController.swift in Sources */,
+				3E61BC1E1C458E30006A6F67 /* Exercise.swift in Sources */,
 				3E61BC031C457915006A6F67 /* AppDelegate.swift in Sources */,
+				3E61BC221C459193006A6F67 /* Lifesum.xcdatamodeld in Sources */,
 				3E61BC051C457915006A6F67 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +362,7 @@
 		};
 		3E61BC141C457915006A6F67 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 557152ABA0C76365F4583A34 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Lifesum Challenge/Info.plist";
@@ -262,6 +374,7 @@
 		};
 		3E61BC151C457915006A6F67 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC8EBC2CE68E4C7A555464D4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Lifesum Challenge/Info.plist";
@@ -290,8 +403,22 @@
 				3E61BC151C457915006A6F67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3E61BC201C459193006A6F67 /* Lifesum.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3E61BC211C459193006A6F67 /* Lifesum.xcdatamodel */,
+			);
+			currentVersion = 3E61BC211C459193006A6F67 /* Lifesum.xcdatamodel */;
+			path = Lifesum.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3E61BBF71C457915006A6F67 /* Project object */;
 }

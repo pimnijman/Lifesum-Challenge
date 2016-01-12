@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MagicalRecord
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Setup core data stack
+        MagicalRecord.setupCoreDataStack()
+        
+        // Import exercises
+        if let path = NSBundle.mainBundle().pathForResource("exercisesStatic", ofType: "json") {
+            do {
+                let jsonData = try NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
+                if let exerciseDicts = try NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as? [[String:AnyObject]] {
+                    print("Importing \(exerciseDicts.count) exercises")
+                    
+                    MagicalRecord.saveWithBlock({ (localContext) -> Void in
+                        
+                        Exercise.MR_importFromArray(exerciseDicts, inContext: localContext)
+                        
+                    }, completion: { (success, error) -> Void in
+                        
+                        let exercises = Exercise.MR_findAll() as! [Exercise]
+                        print("Stored \(exercises.count) exercises")
+                        for exercise in exercises {
+                            print(exercise.calories)
+                        }
+                        
+                    })
+                }
+            } catch {
+                // TODO: Handle error
+            }
+        }
+        
         return true
     }
 
