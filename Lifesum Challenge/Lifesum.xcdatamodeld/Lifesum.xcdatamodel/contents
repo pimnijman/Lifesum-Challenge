@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
     <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="headCategoryID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="headcategoryid"/>
+            </userInfo>
+        </attribute>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="oid"/>
@@ -126,8 +131,8 @@
         </userInfo>
     </entity>
     <elements>
+        <element name="Category" positionX="-54" positionY="144" width="128" height="105"/>
         <element name="Exercise" positionX="-63" positionY="-18" width="128" height="360"/>
-        <element name="Category" positionX="-54" positionY="144" width="128" height="88"/>
         <element name="Food" positionX="-36" positionY="153" width="128" height="133"/>
     </elements>
 </model>

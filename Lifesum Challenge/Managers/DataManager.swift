@@ -73,7 +73,9 @@ class DataManager {
     }
     
     func findAllCategories() -> [Category] {
-        return Category.MR_findAll() as! [Category]
+        // Filter categories that are only used as an index
+        let predicate = NSPredicate(format: "headCategoryID != %d", 15)
+        return Category.MR_findAllSortedBy("title", ascending: true, withPredicate: predicate) as! [Category]
     }
     
     func findFoodsForCategory(category: Category) -> [Food] {

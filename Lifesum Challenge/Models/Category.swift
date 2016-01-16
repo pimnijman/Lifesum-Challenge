@@ -15,5 +15,6 @@ class Category: NSManagedObject {
     @NSManaged var id: Int
     @NSManaged var title: String
     @NSManaged var food: NSSet
+    @NSManaged var headCategoryID: Int
     
 }
