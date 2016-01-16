@@ -79,8 +79,8 @@ class DataManager {
     }
     
     func findFoodsForCategory(category: Category) -> [Food] {
-        let fetchRequest = Food.MR_requestAllWhere("categoryID", isEqualTo: category.id)
-        return Food.MR_executeFetchRequest(fetchRequest) as! [Food]
+        let predicate = NSPredicate(format: "categoryID == %d AND language == \"en_US\"", category.id)
+        return Food.MR_findAllSortedBy("title", ascending: true, withPredicate: predicate) as! [Food]
     }
     
 }
