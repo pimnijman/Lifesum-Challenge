@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MagicalRecord
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,73 +21,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.tintColor = UIColor(red: 76/255.0, green: 190/255.0, blue: 142/255.0, alpha: 1.0)
         
         // Setup core data stack
-        MagicalRecord.setupCoreDataStack()
+        DataManager.setupCoreDataStack()
         
+        // Import data from JSON
         if NSUserDefaults.standardUserDefaults().boolForKey("data_loaded") == false {
-            // Import data from JSON
-            if let
-                categoriesJSONPath = NSBundle.mainBundle().pathForResource("categoriesStatic", ofType: "json"),
-                foodJSONPath = NSBundle.mainBundle().pathForResource("foodStatic", ofType: "json"),
-                exercisesJSONPath = NSBundle.mainBundle().pathForResource("exercisesStatic", ofType: "json")
-            {
-                do {
+            
+            // Show alert while loading
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                let alertController = UIAlertController(title: "Loading data", message: "\n\n\n", preferredStyle: .Alert)
+                let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+                activityIndicator.frame = alertController.view.bounds
+                activityIndicator.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+                activityIndicator.userInteractionEnabled = false
+                activityIndicator.startAnimating()
+                alertController.view.addSubview(activityIndicator)
+                self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
+            })
+            
+            do {
+                try DataManager().importDataFromJSON({ () -> Void in
+                    // Make sure the data won't be loaded the next time the app starts
+                    NSUserDefaults.standardUserDefaults().setBool(true, forKey: "data_loaded")
                     
-                    let categoriesJSONData =    try NSData(contentsOfFile: categoriesJSONPath, options: .DataReadingMappedIfSafe)
-                    let foodJSONData =          try NSData(contentsOfFile: foodJSONPath, options: .DataReadingMappedIfSafe)
-                    let exercisesJSONData =     try NSData(contentsOfFile: exercisesJSONPath, options: .DataReadingMappedIfSafe)
+                    // Dismiss loading alert
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+                    })
                     
-                    if let
-                        categoryDicts =         try NSJSONSerialization.JSONObjectWithData(categoriesJSONData, options: []) as? [[String:AnyObject]],
-                        foodDicts =             try NSJSONSerialization.JSONObjectWithData(foodJSONData, options: []) as? [[String:AnyObject]],
-                        exerciseDicts =         try NSJSONSerialization.JSONObjectWithData(exercisesJSONData, options: []) as? [[String:AnyObject]]
-                    {
-                        print("Importing \(categoryDicts.count) categories")
-                        print("Importing \(foodDicts.count) food")
-                        print("Importing \(exerciseDicts.count) exercises")
-                        
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            // Show alert while loading
-                            let alertController = UIAlertController(title: "Loading data", message: "\n\n\n", preferredStyle: .Alert)
-                            let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
-                            activityIndicator.frame = alertController.view.bounds
-                            activityIndicator.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-                            activityIndicator.userInteractionEnabled = false
-                            activityIndicator.startAnimating()
-                            alertController.view.addSubview(activityIndicator)
-                            self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
-                        })
-                        
-                        let importStartTime = NSDate()
-                        
-                        MagicalRecord.saveWithBlock({ (localContext) -> Void in
-                            
-                            Category.insertFromArray(categoryDicts, inContext: localContext)
-                            Food.insertFromArray(foodDicts, inContext: localContext)
-                            Exercise.insertFromArray(exerciseDicts, inContext: localContext)
-                            
-                        }, completion: { (success, error) -> Void in
-                            
-                            print("Importing completed")
-                            print("Duration: \(NSDate().timeIntervalSinceDate(importStartTime)) seconds")
-                            
-                            // Make sure the data won't be loaded the next time the app starts
-                            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "data_loaded")
-                            
-                            // Dismiss alert
-                            self.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
-                            
-                            // Notify table view controllers to update
-                            NSNotificationCenter.defaultCenter().postNotificationName("data_is_loaded", object: self)
-                            
-                        })
-                    }
-                    
-                } catch {
-                    // TODO: Handle error
-                }
+                    // Notify table view controllers to update
+                    NSNotificationCenter.defaultCenter().postNotificationName("data_is_loaded", object: self)
+                })
+            } catch {
+                // Dismiss loading alert
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+                })
+                
+                // TODO: Handle error
             }
         }
-            
+        
         return true
     }
 

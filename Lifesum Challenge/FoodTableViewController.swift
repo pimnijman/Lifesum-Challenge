@@ -38,8 +38,7 @@ class FoodTableViewController: UITableViewController {
             return
         }
         
-        let fetchRequest = Food.MR_requestAllWhere("categoryID", isEqualTo: category.id)
-        self.foods = Food.MR_executeFetchRequest(fetchRequest) as! [Food]
+        self.foods = DataManager().findFoodsForCategory(category)
         self.tableView.reloadData()
     }
     

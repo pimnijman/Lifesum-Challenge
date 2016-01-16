@@ -33,7 +33,7 @@ class ExerciseTableViewController: UITableViewController {
     }
     
     func refresh() {
-        self.exercises = Exercise.MR_findAll() as! [Exercise]
+        self.exercises = DataManager().findAllExercises()
         self.tableView.reloadData()
     }
 

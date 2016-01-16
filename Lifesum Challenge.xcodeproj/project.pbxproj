@@ -22,6 +22,7 @@
 		3E61BC2E1C45C3D2006A6F67 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC2D1C45C3D2006A6F67 /* CategoryTableViewController.swift */; };
 		3E61BC301C45C673006A6F67 /* FoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E61BC2F1C45C673006A6F67 /* FoodTableViewController.swift */; };
 		3EF622F11C4A616B0043C9B2 /* NSManagedObject+InsertFromArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF622F01C4A616B0043C9B2 /* NSManagedObject+InsertFromArray.swift */; };
+		3EF622F41C4A65A80043C9B2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF622F31C4A65A80043C9B2 /* DataManager.swift */; };
 		EF6490A9978B2DFEFCF992BE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A214C02335383E26EEDCC1BD /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		3E61BC2D1C45C3D2006A6F67 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		3E61BC2F1C45C673006A6F67 /* FoodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTableViewController.swift; sourceTree = "<group>"; };
 		3EF622F01C4A616B0043C9B2 /* NSManagedObject+InsertFromArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSManagedObject+InsertFromArray.swift"; path = "Extensions/NSManagedObject+InsertFromArray.swift"; sourceTree = "<group>"; };
+		3EF622F31C4A65A80043C9B2 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = Managers/DataManager.swift; sourceTree = "<group>"; };
 		557152ABA0C76365F4583A34 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A214C02335383E26EEDCC1BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC8EBC2CE68E4C7A555464D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				3E61BC251C45ABD7006A6F67 /* ExerciseTableViewController.swift */,
 				3E61BC2D1C45C3D2006A6F67 /* CategoryTableViewController.swift */,
 				3E61BC2F1C45C673006A6F67 /* FoodTableViewController.swift */,
+				3EF622F51C4A65AD0043C9B2 /* Managers */,
 				3EF622F21C4A63DD0043C9B2 /* Extensions */,
 				3E61BC1F1C458E4B006A6F67 /* Models */,
 				3E61BC081C457915006A6F67 /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				3EF622F01C4A616B0043C9B2 /* NSManagedObject+InsertFromArray.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		3EF622F51C4A65AD0043C9B2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3EF622F31C4A65A80043C9B2 /* DataManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		4941254D8C19EF8FBCD10106 /* Pods */ = {
@@ -268,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E61BC2E1C45C3D2006A6F67 /* CategoryTableViewController.swift in Sources */,
+				3EF622F41C4A65A80043C9B2 /* DataManager.swift in Sources */,
 				3E61BC1E1C458E30006A6F67 /* Exercise.swift in Sources */,
 				3E61BC2A1C45B299006A6F67 /* Category.swift in Sources */,
 				3E61BC261C45ABD7006A6F67 /* ExerciseTableViewController.swift in Sources */,

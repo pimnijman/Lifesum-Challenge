@@ -31,7 +31,7 @@ class CategoryTableViewController: UITableViewController {
     }
     
     func refresh() {
-        self.categories = Category.MR_findAll() as! [Category]
+        self.categories = DataManager().findAllCategories()
         self.tableView.reloadData()
     }
     
