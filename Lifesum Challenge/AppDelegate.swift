@@ -58,6 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
                         })
                         
+                        let importStartTime = NSDate()
+                        
                         MagicalRecord.saveWithBlock({ (localContext) -> Void in
                             
                             Category.MR_importFromArray(categoryDicts, inContext: localContext)
@@ -67,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         }, completion: { (success, error) -> Void in
                             
                             print("Importing completed")
+                            print("Duration: \(NSDate().timeIntervalSinceDate(importStartTime)) seconds")
                             
                             // Make sure the data won't be loaded the next time the app starts
                             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "data_loaded")
