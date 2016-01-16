@@ -62,9 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         
                         MagicalRecord.saveWithBlock({ (localContext) -> Void in
                             
-                            Category.MR_importFromArray(categoryDicts, inContext: localContext)
-                            Food.MR_importFromArray(foodDicts, inContext: localContext)
-                            Exercise.MR_importFromArray(exerciseDicts, inContext: localContext)
+                            Category.insertFromArray(categoryDicts, inContext: localContext)
+                            Food.insertFromArray(foodDicts, inContext: localContext)
+                            Exercise.insertFromArray(exerciseDicts, inContext: localContext)
                             
                         }, completion: { (success, error) -> Void in
                             
