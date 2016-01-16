@@ -69,7 +69,7 @@ class DataManager {
     }
     
     func findAllExercises() -> [Exercise] {
-        return Exercise.MR_findAll() as! [Exercise]
+        return Exercise.MR_findAllSortedBy("title", ascending: true) as! [Exercise]
     }
     
     func findAllCategories() -> [Category] {
