@@ -35,6 +35,16 @@ class CategoryTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    // MARK: - Actions
+    
+    @IBAction func searchButtonTapped(sender: AnyObject) {
+        let searchResultsController = SearchFoodTableViewController(style: .Plain)
+        let searchController = UISearchController(searchResultsController: searchResultsController)
+        searchController.searchResultsUpdater = searchResultsController
+        searchController.hidesNavigationBarDuringPresentation = false
+        self.presentViewController(searchController, animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

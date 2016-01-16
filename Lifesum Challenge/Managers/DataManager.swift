@@ -83,4 +83,9 @@ class DataManager {
         return Food.MR_findAllSortedBy("title", ascending: true, withPredicate: predicate) as! [Food]
     }
     
+    func findFoodsForSearchString(searchString: String) -> [Food] {
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@ AND language == \"en_US\"", searchString)
+        return Food.MR_findAllSortedBy("title", ascending: true, withPredicate: predicate) as! [Food]
+    }
+    
 }
